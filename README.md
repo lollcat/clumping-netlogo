@@ -21,3 +21,5 @@ Using Netlogo
 # Assumptions
   - no pollination included
     - plants are assumed just to produce a set amount of seeds which become adults
+  - dispersal just moves a set amount in a random direction
+     - this could be changed to instead move a random amount (according to some probability distribution) in a random direction
