@@ -5,7 +5,6 @@ Using Netlogo
 # Simulation Description
 **Setup**
  - populate the area with a selected number of hermaphroditic (green) and diocous (males are blue, females are red) plants
-    -  Starts with double the number of dioecy than hermaphrodites
 
 **Go**
 
