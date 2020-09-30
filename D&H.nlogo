@@ -37,7 +37,7 @@ to populate-map
       [set color red]
     setxy random-xcor random-ycor
   ]
-  create-Hermaphrodites int n-starting-plants  [
+  create-Hermaphrodites n-starting-plants  [
     set age 0
     set size 1
     set color green
