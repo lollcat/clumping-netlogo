@@ -1,11 +1,14 @@
 # Plant-Dioecy-Hermaphrodites
 Simulating competition between diocious and hermaphroditic plants, in an environment with periodic burning
 
-# Description
+# Simulation Description
+**Setup**
  - populate the area with a selected number of hermaphroditic (green) and diocous (males are blue, females are red) plants
     -  Starts with double the number of dioecy than hermaphrodites
 
-**The following is then repeated**
+**Go**
+
+**The following set of steps are repeated**
 
  - **compete**: Only one plant can survive on a patch at a time
     - for patches with more than one plant, a plant on the patch is randomly selected to survive, while the rest die
