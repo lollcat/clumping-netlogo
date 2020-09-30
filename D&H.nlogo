@@ -37,7 +37,7 @@ to populate-map
       [set color red]
     setxy random-xcor random-ycor
   ]
-  create-Hermaphrodites int n-starting-plants / 2 [
+  create-Hermaphrodites int n-starting-plants  [
     set age 0
     set size 1
     set color green
@@ -297,7 +297,7 @@ TEXTBOX
 96
 171
 264
-Press setup to initialise with the selected starting number of each species (Hermaphrodites have half the intial starting population)\n\nThen press go to run the simulation\n\nUse the sliders on the right hand side to control the simulation parameters\n
+Press setup to initialise with the selected starting number of each species \n\nThen press go to run the simulation\n\nUse the sliders on the right hand side to control the simulation parameters\n
 11
 0.0
 1
