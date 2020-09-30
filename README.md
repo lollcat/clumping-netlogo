@@ -1,5 +1,6 @@
 # Plant-Dioecy-Hermaphrodites
-Simulating competition between diocious and hermaphroditic plants, in an environment with periodic burning
+Simulating competition between diocious and hermaphroditic plants, in an environment with periodic burning.
+Using Netlogo
 
 # Simulation Description
 **Setup**
