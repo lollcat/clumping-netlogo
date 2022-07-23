@@ -1,4 +1,5 @@
 turtles-own [age]
+patches-own [turtle-count]
 
 
 to setup
@@ -7,10 +8,11 @@ to setup
   reset-ticks
   set-default-shape turtles "plant"
   populate-map
+  update-patch-turtle-count
 end
 
 to populate-map
-  create-turtles initial-density * area-size ^ 2 [
+  create-turtles initial-density * count patches [
     setxy random-xcor random-ycor
     set age 0
     set color green
@@ -23,6 +25,7 @@ to go
   set-seeds
   disperse
   burn
+  update-patch-turtle-count
 end
 
 to age-turtles
@@ -51,15 +54,46 @@ to burn
   ]
 end
 
-to-report turtle-count
+to update-patch-turtle-count
+    ask turtles [
+        ask patch-here
+      [ set turtle-count 0
+      ]
+  ]
+  ask turtles [
+        ask patch-here
+      [ set turtle-count turtle-count + 1
+      ]
+  ]
+end
+
+to-report turtle-count-total
   report count turtles
+end
+
+to-report mean-density
+  report count turtles / count patches
+end
+
+
+to-report mean-density-check
+  report mean [turtle-count] of patches
+end
+
+
+to-report variance-density
+  report variance [turtle-count] of patches
+end
+
+to-report mean-over-variance
+  report mean [turtle-count] of patches / variance [turtle-count] of patches
 end
 @#$#@#$#@
 GRAPHICS-WINDOW
 210
 10
-543
-344
+686
+487
 -1
 -1
 13.0
@@ -73,9 +107,9 @@ GRAPHICS-WINDOW
 1
 1
 0
-24
+35
 0
-24
+35
 0
 0
 1
@@ -83,10 +117,10 @@ ticks
 30.0
 
 BUTTON
-641
-192
-714
-225
+1086
+297
+1159
+330
 NIL
 setup
 NIL
@@ -100,25 +134,25 @@ NIL
 1
 
 SLIDER
-779
-88
-951
-121
+1224
+193
+1396
+226
 area-size
 area-size
 0
 100
-24.0
+35.0
 1
 1
 NIL
 HORIZONTAL
 
 SLIDER
-781
-23
-953
-56
+1226
+128
+1398
+161
 initial-density
 initial-density
 0
@@ -130,10 +164,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-577
-24
-749
-57
+1022
+129
+1194
+162
 n-children
 n-children
 0
@@ -145,10 +179,10 @@ NIL
 HORIZONTAL
 
 SLIDER
-976
-23
-1165
-56
+1421
+128
+1610
+161
 dispersal-distance
 dispersal-distance
 0
@@ -160,10 +194,10 @@ NIL
 HORIZONTAL
 
 BUTTON
-752
-194
-815
-227
+1197
+299
+1260
+332
 NIL
 go
 NIL
@@ -177,13 +211,57 @@ NIL
 1
 
 MONITOR
-890
-208
-984
-253
+1335
+313
+1429
+358
 Turtle Count
-turtle-count
+turtle-count-total
 17
+1
+11
+
+MONITOR
+1459
+317
+1560
+362
+Mean Density
+mean-density
+4
+1
+11
+
+MONITOR
+1592
+315
+1808
+360
+debugging-mean-density-check
+mean-density-check
+4
+1
+11
+
+MONITOR
+1454
+385
+1577
+430
+Variance Density
+variance-density
+2
+1
+11
+
+MONITOR
+1467
+464
+1577
+509
+mean/variance
+mean-over-variance
+3
 1
 11
 
