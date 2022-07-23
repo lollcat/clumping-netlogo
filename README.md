@@ -1,10 +1,16 @@
-# Plant-Dioecy-Hermaphrodites
+# Simulating plants with Netlogo
+## Clumping
+Simulating clumping behavior of new seedlings, as a function of dispersal distance / number of seedlings per parent.
+
+
+
+## Plant-Dioecy-Hermaphrodites
 Simulating competition between diocious and hermaphroditic plants, in an environment with periodic burning.
 Using Netlogo
 
-# Simulation Description
+### Simulation Description
 **Setup**
- - populate the area with a selected number of hermaphroditic (green) and diocous (males are blue, females are red) plants
+ - populate the area with a selected number of hermaphroditic (green) and dioecious (males are blue, females are red) plants
 
 **Go**
 
@@ -17,7 +23,7 @@ Using Netlogo
  - **burn**: The fire comes, all adult plants die
   
 
-# Assumptions
+### Assumptions
   - no pollination included
     - plants are assumed just to produce a set amount of seeds which become adults
   - dispersal just moves a set amount in a random direction
